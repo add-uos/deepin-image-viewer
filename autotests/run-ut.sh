@@ -25,6 +25,10 @@ if [ -d "$PREFIX" ]; then
   export LD_LIBRARY_PATH="$PREFIX/lib/x86_64-linux-gnu${LD_LIBRARY_PATH:-}"
   export QT_EXTRA_INCLUDE_DIR="$PREFIX/include/x86_64-linux-gnu/qt6"
   export PATH="$PREFIX/bin:$PATH"
+  # The locally extracted OCR pkg-config file resolves include/lib paths one
+  # level too deep for the multiarch layout; supply the correct dirs directly.
+  export OCR_INCLUDE_DIRS="$PREFIX/include/deepin-ocr-plugin-manager:$PREFIX/include"
+  export OCR_LIBRARY_DIRS="$PREFIX/lib/x86_64-linux-gnu"
 fi
 export QT_QPA_PLATFORM="${QT_QPA_PLATFORM:-offscreen}"
 
