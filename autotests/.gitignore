@@ -1,0 +1,24 @@
+# Build artifacts
+build/
+*.o
+*.obj
+*.gcda
+*.gcno
+*.gcov
+*.info
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Coverage HTML output
+report/
+
+# Session state (per skill: not committed)
+.ut-session.json
+*.ut-session.*.json
+
+# Python
+__pycache__/
+*.pyc
